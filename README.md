@@ -26,5 +26,6 @@ La mejor forma es simplemente leyendo la consigna e intentar resolverlo, te acon
 ## ¿Qué utilizo en los videos para resolverlos?
 A la hora de grabarlos utilizo RunJs, aplicación de escritorio que permite tener un entorno de ejecución de código Javascript para ver los resultados en tiempo real.
 
+
 ----------------------------------------------------------------------------------------------
 
