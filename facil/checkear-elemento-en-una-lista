@@ -1,0 +1,19 @@
+// Crear una función que reciba una lista y un valor a checkear. Devolver true si se encuentra y false si no se encuentra en la lista.
+
+function solution(list, value) {
+  let check = false
+  for(let i = 0; i < list.length; i++) {
+    if(list[i] === value) {
+      check = true
+    }
+  }
+  return check
+}
+
+const list = [1,2,3,4]
+const value = 5
+solution(list, value) // False
+
+const listLetters = ['a','b','c']
+const valueLetter = 'a'
+solution(listLetters, valueLetter) // true

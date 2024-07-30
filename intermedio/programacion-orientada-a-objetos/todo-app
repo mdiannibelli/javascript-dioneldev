@@ -1,0 +1,44 @@
+// Crear una aplicación todo-app (lista de tareas) 📝
+
+class Tarea {
+  constructor(id, nombre) {
+    this.id = id
+    this.nombre = nombre; 
+    this.hecha = false
+  }
+  detalles() {
+    console.log(`La tarea ${this.nombre} está ${this.hecha === false ? 'sin hacer' : 'hecha'}`)
+  }
+  finalizarTarea() {
+    this.hecha = true
+  }
+}
+
+class Lista {
+  constructor(tareas = []){
+    this.tareas = tareas
+    this.nextId = 1
+  }
+  agregarTarea(nombre) {
+    if(typeof nombre !== 'string') throw new Error("error")
+    const nuevaTarea = new Tarea(this.nextId++, nombre)
+    this.tareas.push(nuevaTarea)
+  }
+  finalizarTarea(id) {
+    const tarea = this.tareas.find(t => t.id === id)
+    tarea.finalizarTarea()
+  }
+  removerTarea(id) {
+    this.tareas = this.tareas.filter(t => t.id !== id)
+  }
+  mostrarTareas() {
+    this.tareas.forEach((t) => t.detalles())
+  }
+}
+
+const list = new Lista()
+list.agregarTarea("Limpiar")
+list.agregarTarea("Jugar")
+list.removerTarea(1)
+list.finalizarTarea(2)
+list.mostrarTareas()

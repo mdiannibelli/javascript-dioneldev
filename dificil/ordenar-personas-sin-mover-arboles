@@ -1,0 +1,20 @@
+// Hay algunas personas paradas en el parque y se encuentran algunos árboles entre ellos que no pueden ser movidos. Tu tarea es reorganizar las personas por su altura en orden sin mover los árboles.
+
+function solution(a) {
+    let nums = []
+    for(let i = 0; i < a.length; i++) {
+      if(a[i] !== -1) {
+        nums.push(a[i])
+      }
+    }
+  const sortedNums = nums.sort((a,b) => a - b)
+  for(let j = 0; j < a.length; j++) {
+    if(a[j] === -1) {
+      sortedNums.splice(j, 0, -1)
+    }
+  }
+  return sortedNums
+}
+
+const a = [-1, 150, 190, 170, -1, -1, 160, 180]
+solution(a)

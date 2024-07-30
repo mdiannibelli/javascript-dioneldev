@@ -1,0 +1,37 @@
+// Crear un supermercado 🛒 que permita agregar productos, mostrarlos y obtener el precio total mediante la suma de ellos.
+
+// Cada producto deberá tener un identificador único, un nombre, precio y stock, también deberíamos poder obtener los detalles del producto.
+
+class Producto {
+  constructor(id, nombre, precio, stock) {
+    this.id = id
+    this.nombre = nombre
+    this.precio = precio
+    this.stock = stock
+  }
+  detalles() {
+    console.log(`${this.id}: ${this.nombre}, $${this.precio}, stock: ${this.stock}`)
+  }
+}
+
+class Supermercado {
+  constructor(productos = []) {
+    this.productos = productos
+    this.nextId = 1
+  }
+  agregarProducto(nombre, precio, stock) {
+    if(typeof nombre !== "string" || typeof precio !== "number" || typeof stock !== "number") throw new Error("Ingrese un producto válido")
+    // Mas validaciones, precio y stock mayor a 0
+    const nuevoProducto = new Producto(this.nextId++, nombre, precio, stock)
+    this.productos.push(nuevoProducto)
+    console.log("Se añadió un nuevo producto!")
+  }
+  mostrarProductos() {
+    this.productos.forEach((producto) => producto.detalles())
+  }
+}
+
+const supermarket = new Supermercado()
+supermarket.agregarProducto("papel", 20, 1)
+supermarket.agregarProducto("lapiz", 50, 5)
+supermarket.mostrarProductos()

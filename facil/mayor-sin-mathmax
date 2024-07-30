@@ -1,0 +1,24 @@
+// Escribir una función findMax que reciba un 
+// array de numeros y devuelva el mayor.
+// ¡ NO PUEDES USAR MATH.MAX !
+const findMax = (arrayOfNums) => {
+  let result = -Infinity;
+  for(let i = 0; i < arrayOfNums.length; i++) {
+    let number = arrayOfNums[i];
+    if(number > result) {
+      result =+ number;
+    }
+  }
+  return Math.floor(result);
+}
+
+const arr = [-8,-2,-13,-44,-5182];
+console.log(findMax(arr))
+
+// Con math.max
+const findMaxWithMax = (array) => {
+  const maxNumber = Math.max(...array);
+  return maxNumber
+}
+const arrOfNumbers = [10,29,48,32,58]
+console.log(findMaxWithMax(arrOfNumbers));

@@ -1,0 +1,13 @@
+// Crear una función delay
+
+const delay = (time) => {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve("Promesa resuelta!");
+    }, time)
+  })
+}
+
+
+
+delay(3000).then(res => console.log(res));

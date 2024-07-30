@@ -1,0 +1,18 @@
+// Dado un array de números enteros, encontrar la máxima absoluta diferencia entre dos elementos adyacentes.
+
+function solution(arr) {
+  let diff = 0
+  for(let i = 0; i < arr.length; i++) {
+    const actualDiff = Math.abs(arr[i-1] - arr[i])
+    if(diff < actualDiff) {
+      diff = actualDiff
+    }
+  }
+  return diff
+}
+
+
+const arr = [2, 4, 1, 0]
+const arr2 = [10, 11, 13]
+solution(arr) // 3
+solution(arr2) // 2

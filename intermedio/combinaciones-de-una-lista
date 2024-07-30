@@ -1,0 +1,14 @@
+// Crear una función que devuelva todas las combinaciones posibles de una lista recibida por parámetros.
+
+function solution(list) {
+  const results = []
+  for(let i = 0; i < list.length; i++) {
+    for(let j = 0; j < list.length; j++) {
+      results.push([list[i], list[j]])
+    }
+  }
+  return results
+}
+
+const list = ['mandarina', 'naranja', 'banana']
+solution(list)

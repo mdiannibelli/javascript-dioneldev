@@ -1,0 +1,30 @@
+// ❗ Como manejar errores en Javascript correctamente
+
+// Error => Clase padre y CustomizedError es la clase hija 
+// Super(message) llama al constructor padre (ERROR) con el mensaje de error proporcionado
+  class CustomizedError extends Error {
+    constructor(message, name = "Connection Error") {
+      super(message) 
+      this.name = name
+    }
+  }
+
+function sumNums(a,b) {
+  if((a+b) > 10) throw new CustomizedError("Something went wrong.." , "Bad Operation")
+  return a + b;
+}
+
+function makeOperation() {
+  try {
+    const result = sumNums(15,2)
+    return result
+  } catch(error) {
+    if(error instanceof CustomizedError) {
+      console.error(`Error: ${error.name}, ${error.message}`)
+    } else {
+      console.error(`Unknown Error: ${error.message}`)
+  }
+} 
+}
+
+makeOperation()

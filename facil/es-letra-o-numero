@@ -1,0 +1,13 @@
+//Crea una función que devuelva true si el string
+//introducido es una letra. '1' y 1 no son lo mismo.
+
+const isString = (text) => {
+  if(!text) return false;
+  let letters = 'abcdefghijklmnopqrstuvwxyz'
+  if(letters.includes(text)) return true;
+  return false;
+}
+
+
+console.log(isString("a")) //true
+console.log(isString("1")) //false

@@ -1,0 +1,22 @@
+// En el taller de santa los elfos,
+// tienen una lista de regalos que
+// desean fabricar y un conjunto 
+// limitado de materiales.
+
+// Escribir una función que dada una
+// lista de regalos y los materiales
+// disponibles, devuelva una lista de
+// los regalos que se pueden fabricar.
+
+const manufacture = (gifts, materials) => {
+  return gifts.filter(gift => {
+    return gift.split("").every(letter => materials.includes(letter));
+  })
+}
+
+
+
+const gifts = ['juego', 'puzzle']
+const materials = 'jlepuz'
+
+manufacture(gifts, materials); // 'puzzle'

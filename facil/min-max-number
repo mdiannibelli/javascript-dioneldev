@@ -1,0 +1,20 @@
+// Haz una función que devuelva el número menor y mayor de un array de números
+
+function solution(numbers) {
+
+  const max = Math.max(...numbers);
+  
+  let minNum = Infinity;
+  for(let i = 0; i < numbers.length; i++) {
+    if(minNum > numbers[i]) {
+      minNum = numbers[i]
+    }
+  }
+  return {
+    min: minNum,
+    max: max
+  }
+}
+
+const numbers = [25,79,129,50,2] // min: 2 , max: 129
+solution(numbers)

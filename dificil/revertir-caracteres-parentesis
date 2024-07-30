@@ -1,0 +1,20 @@
+// Escribir una función que revierta los carácteres en los paréntesis de un string dado.
+
+function solution(inputString) {
+  let stack = []
+  let words = ''
+  for(let i = 0; i < inputString.length; i++) {
+    if(inputString[i] === '(') {
+        stack.push(words)
+        words = ''
+    } else if(inputString[i] === ')') {
+        words = stack.pop() + words.split("").reverse().join("")
+    } else {
+      words += inputString[i]
+    }
+  }
+  return words
+}
+
+const inputString = "foo(bar)baz(blim)"
+solution(inputString) // "foorabbazmilb"

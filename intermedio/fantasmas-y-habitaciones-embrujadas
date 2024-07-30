@@ -1,0 +1,31 @@
+// Los fantasmas están mundándose a una nueva construcción la cual tiene un conjunto de habitaciones y tiene un costo diferente, alguna de ellas tienen coste cero pero hay un rumor de que todas las habitaciones gratis están embrujadas, los fantasmas se niegan a pasar por ellas y las que se encuentren por debajo.
+
+// Dado una matríz de enteros, donde cada valor representa el costo de la habitación, debes devolver la suma total de todas las habitaciones que son adecuadas para los fantasmas.
+
+// |👻|1️⃣|1️⃣|2️⃣|
+// |👻|5️⃣|👻|👻|
+// |2️⃣|👻|3️⃣|3️⃣|
+
+function solution(matrix) {
+    let total = 0
+    console.log(matrix[0].length) // 4 => 4 columnas
+    console.log(matrix.length) // 3 => 3 filas
+  
+    for (let i = 0; i < matrix[0].length; i++) { // Accedemos a la primer columna de la matriz
+        for (let j = 0; j < matrix.length; j++) { // Navegamos por cada habitación verticalmente
+            if (matrix[j][i] === 0) {
+                // Esta habitación esta embrujada, entonces no importarán las habitaciones debajo. 
+                // Continuar a la siguiente columna de habitaciones
+                break;
+            }
+            total += matrix[j][i];
+        }
+    }
+    return total;
+}
+
+const matrix = [[0, 1, 1, 2], 
+                [0, 5, 0, 0], 
+                [2, 0, 3, 3]]
+
+solution(matrix) // 9

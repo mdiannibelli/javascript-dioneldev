@@ -1,0 +1,17 @@
+// Crear una alarma 🚨 que reciba los segundos y haga una cuenta hasta que suene.
+
+function alarma(time) {
+  let counter = 0;
+  const id = setInterval(() => {
+    if(counter < time) {
+      counter++;
+      console.log(counter)
+    } else {
+      console.log("Beep!")
+      clearInterval(id)
+    }
+  }, 1000)
+}
+
+const seconds = 5;
+alarma(seconds)

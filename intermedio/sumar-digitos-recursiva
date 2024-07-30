@@ -1,0 +1,11 @@
+// Haz una función recursiva que sume los dígitos ingresados
+
+function solution(n) {
+  if(n < 10) return n // CASO BASE PARA DETENERSE (UN SOLO DIGITO)
+  // Tomamos el último dígito de N usando n modulo de 10 y lo sumamos a la suma de digitos restantes
+  return (n % 10) + solution(Math.floor(n / 10)) // '4' y '123'
+}
+
+solution(1234) // 10
+solution(987) // 24
+solution(3) // 3

@@ -1,0 +1,16 @@
+// Haz una función que dado un monto depositado en el banco, incremente el salario cada año en base a la tasa anual, con la condición que no debes hacer ningun depósito y deberás calcular la cantidad de años que se tardará en superar el objetivo de dinero deseado.
+
+function solution(deposit, rate, goal) {
+  if(deposit + rate === goal) return 1;
+  const percentage = rate / 100;
+  let counter = 0;
+  while(deposit < goal) {
+    deposit = deposit * percentage + deposit;
+    counter++
+  }
+  return counter;
+}
+
+solution(100, 20, 170) // 3
+solution(100, 1, 101) // 1
+solution(1, 100, 64) // 6

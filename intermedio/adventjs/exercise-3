@@ -1,0 +1,17 @@
+// Tu tarea es escribir una función que identifique y devuelva el primer paso extra que se ha añadido o eliminado en la cadena de fabricación. Si no hay ninguna diferencia entre las secuencias, devuelve una cadena vacía.
+
+function findNaughtyStep(original, modified) {
+  if(original.length === modified.length) return '';
+
+  const largeString = Math.max(original.length, modified.length);
+
+  for(let i = 0; i < largeString; i++) {
+    if(original[i] !== modified[i]) return modified.length > original.length ? 
+    modified[i] : original[i]
+  }
+  return ''
+}
+
+const original = 'stepfor'
+const modified = 'stepor'
+findNaughtyStep(original, modified) // 'f'

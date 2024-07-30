@@ -1,0 +1,21 @@
+// Haz una función que determinen si el color de dos celdas dadas de un tablero de ajedrez son del mismo color
+
+function solution(cell1, cell2) {
+  function getColumnNumber(letter) {
+    return letter.charCodeAt(0) - 'A'.charCodeAt(0) + 1
+  }
+  const col1 = getColumnNumber(cell1[0])
+  const row1 = parseInt(cell1[1])
+  const col2 = getColumnNumber(cell2[0])
+  const row2 = parseInt(cell2[1])
+  
+  return (col1 + row1) % 2 === (col2 + row2) % 2
+}
+
+const cell1 = "A1"
+const cell2 = "B2"
+solution(cell1, cell2) // True
+
+const cell3 = "A1"
+const cell4 = "H3"
+solution(cell3, cell4) // False

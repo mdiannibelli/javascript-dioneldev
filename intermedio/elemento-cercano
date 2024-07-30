@@ -1,0 +1,21 @@
+// Haz una función que determine qué elemento de la matríz es el más cercano a todos los demás valores que minimiza la siguiente suma:
+// S(x)=∣a[0]−x∣+∣a[1]−x∣+...+∣a[n−1]−x∣
+
+// x = 2 => ∣2−2∣+∣4−2∣+∣7−2∣=0+2+5=7
+// x = 4 => ∣2−4∣+∣4−4∣+∣7−4∣=2+0+3=5
+// x = 7 => ∣2−7∣+∣4−7∣+∣7−7∣=5+3+0=8
+
+// Mediana: En un array ordenado, el elemento que minimiza la suma de las diferencias absolutas con todos los demás elementos es la mediana. Esto se debe a la naturaleza de la función de valor absoluto.
+
+function solution(a) {
+  if(a.length <= 1) return a[0]
+  const midIndex = Math.floor((a.length - 1) / 2 );
+  return a[midIndex]
+}
+
+solution([2, 4, 7]) // 4
+solution([2, 3]) // 2
+solution([23]) // 23
+
+
+

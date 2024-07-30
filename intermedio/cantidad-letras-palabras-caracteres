@@ -1,0 +1,21 @@
+// Haz una función que devuelva la cantidad de palabras, letras, y carácteres de una oración.
+
+function solution(words) {
+  const wordsCount = words.split(" ").filter(word => word.match(/^[a-zA-Z]/)).length
+  
+  const letterRegex =  /[a-zA-Z]/g;
+  const letterMatches = words.match(letterRegex);
+  
+  const specialCharsRegex = /[!@#\$%\^\&*\,)\(+=._-]/g;
+  const specialChars = words.match(specialCharsRegex);
+  
+  return {
+    wordsCount: wordsCount,
+    chracters: words.length,
+    letters: letterMatches ? letterMatches.length : "No contiene letras",
+    specialChars: specialChars ? specialChars.length : "No contiene carácteres especiales"
+  }
+}
+
+const words = "Estamos resolviendo 1 ejercicio de Javascript, bastante simple."
+solution(words)

@@ -1,0 +1,22 @@
+// Crear una función que devuelva todos los números pares e impares de un número
+
+function solution(num) {
+  let even = []
+  let odd = []
+  
+  let start = num < 0 ? num : 0
+  let end = num > 0 ? num : 0
+  
+  for(let i = start; i < end; i++) {
+    if(i % 2 === 0) {
+      even.push(i)
+    } else {
+      odd.push(i)
+    }
+  }
+  return (
+    `Even numbers = ${even} \n Odd numbers: ${odd}`)
+}
+
+const num = -24 
+solution(num)

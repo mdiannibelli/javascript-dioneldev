@@ -1,0 +1,26 @@
+// Haz una función que devuelva True si la IP ingresada pertenece al protocolo Ipv4.
+
+function solution(ip) {
+  const fragments = ip.split(".")
+  let result = false
+  for(let i = 0; i < fragments.length; i++){
+    if(fragments[i] === '' || !/^\d+$/.test(fragments[i])) return false
+    if(fragments[i].length > 1 && fragments[i][0] === '0') return false
+    
+    const num = parseInt(fragments[i])
+    if(num >= 0 && num <= 255) {
+      result = true
+    } else {
+      result = false
+      break;
+    }
+  }
+  return fragments.length === 4 ? result : false
+}
+
+const ipv4 = '172.16.254.1' 
+solution(ipv4) // TRUE
+const ipv4dos = '64.233.161.00' 
+solution(ipv4dos) // FALSE
+const ipv4tres = '124.52.67.1a' 
+solution(ipv4tres) // FALSE

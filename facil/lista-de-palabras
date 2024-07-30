@@ -1,0 +1,13 @@
+// Haz una función que reciba una serie de palabras separadas por espacios y conviértelo a una lista con esos elementos.
+
+function solution(words) {
+  return words.split(" ").map((w, i) => {
+    return {
+      index: i + 1,
+      word: w
+    }
+  })
+}
+
+const words = "Hoy es un día de mucha programación"
+solution(words)

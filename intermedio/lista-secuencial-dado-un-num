@@ -1,0 +1,13 @@
+// Generar una lista de números secuencial usando bucles anidados a partir de un número recibido. El n° recibido será dividido por dos hasta llegar a uno.
+
+function solution(n) {
+  const results = []
+  for(let i = 0; i < n; i++) {
+    for(let j = n; j > 0; j = parseInt(j / 2)) {
+      results.push(j)
+    }
+  }
+  return results
+}
+
+solution(4)

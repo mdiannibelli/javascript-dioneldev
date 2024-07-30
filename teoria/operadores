@@ -1,0 +1,34 @@
+// Operadores en Javascript
+
+let producto1 = "PARLANTE"
+let producto2 = "parlante"
+let num1 = 8
+let num2 = '8'
+let num3 = 4
+
+// == ===
+if(num1 == num2) { // == <- Compara pero no estrictamente, === <- Compara estrictamente
+  console.log("Son iguales pero no estrictamente iguales")
+} else {
+  console.log("No son iguales")
+}
+
+// !== <- Distinto de
+if(producto1 !== producto2) console.log("Son distintos")
+
+// > y <
+if(num1 > num3) console.log(`${num1} es mayor que ${num3}`)
+
+// >= y <=
+if(num3 <= num1) console.log(`${num1} es menor o igual que ${num3}`)
+
+// && <-- (solo si) Ambas condiciones son verdaderas
+if(typeof num1 === "number" && typeof num3 === "number") console.log("Ambos son numeros")
+
+// || <-- Una de las dos condiciones debe ser verdadera
+if(typeof num1 === "number" || typeof num2 === "number") console.log("Uno de los dos es un número")
+
+// ?? <-- Fusión de nulos, si el primer valor es undefined o null se le asignará el segundo valor
+const letter = undefined ?? 'a'
+const num = null ?? 5
+console.log(letter, num)

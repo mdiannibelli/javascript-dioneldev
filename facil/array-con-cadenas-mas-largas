@@ -1,0 +1,16 @@
+// Dado un array de strings, devolver otro array que contenga todas las cadenas más largas
+
+function solution(inputArray) {
+    let counter = 0
+    for(let i = 0; i < inputArray.length; i++) {
+        if(counter < inputArray[i].length) {
+            counter = inputArray[i].length 
+        }
+    }
+    return inputArray.filter(w => w.length === counter)
+}
+
+const inputArray = ["aba", "aa", "ad", "vcd", "aba"]
+solution(inputArray) // ['aba', 'vcd', 'aba']
+const inputArray2 = ["aa"]
+solution(inputArray2) // ['aa']

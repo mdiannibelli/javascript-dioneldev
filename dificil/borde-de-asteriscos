@@ -1,0 +1,17 @@
+// Dado un array de elementos crear un borde de asteríscos (*) para cada uno de ellos.
+
+function solution(arr) {
+  const borderLength = arr[0].length + 2
+  const border  = '*'.repeat(borderLength)
+  const sidesBorders = arr.map((e) => `*${e}*`)
+  sidesBorders.unshift(border)
+  sidesBorders.push(border)
+  return sidesBorders
+}
+
+
+const picture = ["abc", "ded"] // [ '*****',
+                              //    '*abc*',
+                              //    '*ded*',
+                              //    '*****']
+solution(picture)

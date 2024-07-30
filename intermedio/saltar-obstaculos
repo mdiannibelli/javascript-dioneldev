@@ -1,0 +1,23 @@
+// Haz una función que devuelva encuentre la mínima cantidad de saltos que se deban dar para evadir los obstaculos dados.
+
+function solution(arr) {
+  let jump = 1;
+  for(let i = jump; ; jump++) {
+    let canJump = true
+    
+    // Buscamos el NO multiplo
+    for(let j = 0; j < arr.length; j++) {
+      if(arr[j] % jump === 0) {
+        canJump = false;
+        break;
+      }
+    }
+    
+    if(canJump) {
+      return jump
+    }
+  }
+}
+
+const inputArray = [5, 3, 6, 7, 9] // 4
+solution(inputArray)

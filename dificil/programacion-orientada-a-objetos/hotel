@@ -1,0 +1,42 @@
+class Habitacion {
+  constructor(nro, precio) {
+    this.nro = nro 
+    this.precio = precio 
+    this.disponible = true
+  }
+  detalles() {
+    console.log(`${this.nro}: $${this.precio} ${this.disponible === true ? 'Disponible' : 'No disponible'}`)
+  }
+  removerReserva() {
+    this.disponible = false
+  }
+}
+
+class Hotel {
+  static counterId = 0
+  constructor(habitaciones = []) {
+    this.habitaciones = habitaciones
+    this.id = Hotel.counterId++
+  }
+  reservarHabitación(nro, precio) {
+    if(typeof nro !== 'number' || typeof precio !== 'number') throw new Error("Ingrese una habitación valida")
+    const nuevaHabitacion = new Habitacion(nro, precio, this.disponible = true)
+    this.habitaciones.push(nuevaHabitacion)
+  }
+  removerReserva(nro) {
+    const habitacion = this.habitaciones.find(h => h.nro === nro) 
+    if(habitacion) {
+      habitacion.removerReserva()
+    } else {
+      console.log("No se encontró la habitacion")
+    }
+  }
+  mostrarHabitaciones() {
+    this.habitaciones.forEach((h) => h.detalles())
+  }
+}
+
+const hotel = new Hotel()
+hotel.reservarHabitación(1, 10000)
+hotel.removerReserva(1)
+hotel.mostrarHabitaciones()

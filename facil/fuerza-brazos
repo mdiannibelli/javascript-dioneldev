@@ -1,0 +1,8 @@
+// Averiguar si la fuerza de brazos de dos personas dadas, son igualmente fuertes si pueden levantar la misma cantidad de peso y si el brazo más debil coincide con el brazo mas fuerte o el más debil del otro.
+
+function solution(yourLeft, yourRight, friendsLeft, friendsRight) {
+  return yourLeft+yourRight === friendsLeft+friendsRight && (yourLeft === friendsLeft || yourLeft === friendsRight)
+}
+
+solution(10, 15, 15, 10) // true
+solution(10, 15, 5, 20) // false

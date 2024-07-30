@@ -1,0 +1,12 @@
+// Crear una función para obtener el nombre del día actual
+// Ejemplo "Viernes"
+
+const dayName = ["Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"]
+
+function getDayName(num) {
+  if(num > 6) throw new Error("Error al obtener el día")
+  return dayName[num]
+}
+
+const date = new Date().getDay();
+getDayName(date)

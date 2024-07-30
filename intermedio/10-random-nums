@@ -1,0 +1,17 @@
+// Haz una función que rellene un array de números con otros 10 números al azar entre el 1 al 25, ordenados de menor a mayor y los números no deben repetirse.
+
+function solution(nums) {
+  const newNums = [...nums]
+  const arrLength = nums.length + 10;
+  while(newNums.length !== arrLength) {
+    let num = Math.floor(Math.random() * 25 + 1);
+    if(!newNums.includes(num)) {
+      newNums.push(num)
+    }
+  }
+  
+  return newNums.sort((a,b) => a-b);
+}
+
+const numbers = [9, 22, 10, 5]
+solution(numbers)

@@ -1,0 +1,15 @@
+// Haz una función que cuente la cantidad de movimientos que se deben hacer para transformar la matriz en una matriz secuencial.
+
+function solution(arr) {
+  let moves = 0
+  for(let i = 1; i < arr.length; i++) {
+    if(arr[i] <= arr[i-1]) {
+      moves += arr[i-1] - arr[i] + 1
+      arr[i] = arr[i-1] + 1
+    }
+  }
+  return moves
+}
+ 
+const arr = [2, 1, 10, 1]
+solution(arr) // 12

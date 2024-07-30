@@ -1,0 +1,15 @@
+// Crear una función que convierta un número decimal a binario
+
+function convert(num) {
+  if(num <= 0) return 0
+  let binario = ""
+  let count = num 
+  while(count > 0) {
+    binario += count % 2
+    count = Math.floor(count / 2)
+  }
+  return binario
+}
+
+const num = 13
+convert(num) // 1011

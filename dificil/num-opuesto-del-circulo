@@ -1,0 +1,17 @@
+// Dado un círculo de números enteros de 0 a n-1 haz una función que encuentre el número que se encuentra en la posición opuesta al primer numero.
+
+function solution(n, firstNumber) {
+  const halfCircle = Math.floor(n / 2) // distancia que hay que recorrer desde un número dado para llegar al número opuesto.
+  const result = (firstNumber + halfCircle) % n // modulo n se usa para asegurar que el resultado siempre esté dentro del rango válido de índices del círculo (de 0 a n-1) si excede n-1, se "envuelva" y empiece nuevamente desde 0.
+  return result
+}
+
+solution(10, 2) // 7
+solution(10, 7) // 2
+solution(4, 1) // 3
+
+// 0 - 1 - 2 - 3 - 4
+// |               |
+// 9               5
+// |               |
+// 8 - 7 - 6 - 5 - 4

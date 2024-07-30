@@ -1,0 +1,10 @@
+// Crea una función que recibe un número entero y devuelva la cantidad de dígitos
+const digitCounter = (num) => {
+  if(isNaN(num)) return "Not a number";
+  const digit = Math.abs(num).toString();
+  console.log(digit);
+  return digit.length;
+}
+
+
+console.log(digitCounter(11241));// Crea una función que recibe un número entero y devuelva la cantidad de dígitos

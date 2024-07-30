@@ -1,0 +1,15 @@
+// Crear una función que calcule la cantidad de días que llevamos vivos a partir de una fecha dada.
+
+function calculateDaysLived(birthDate) {
+  const today = new Date()
+  const birthTime = birthDate.getTime()
+  const todayTime = today.getTime()
+  const differenceTime = todayTime - birthTime
+  
+  const daysLived = Math.floor(differenceTime / (1000 * 60 * 60 * 24))
+  return daysLived
+}
+
+
+const birthDate = new Date('2004-04-18');
+calculateDaysLived(birthDate);

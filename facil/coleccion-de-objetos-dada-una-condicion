@@ -1,0 +1,22 @@
+// Dado una matriz, crea una colección de objetos 
+// que contengan un nombre e indiquen la cantidad 
+// de veces que cada uno de ellos cumplan cierta condición.
+// La condición es n > 2
+// Matriz [1,2,3,4,5]
+
+const count = (matriz, callback) => {
+  let counter = [];
+  for(const element of matriz) {
+    const name = callback(element) === false ? 'No cumple' : 'Cumple';
+    const foundName = counter.find(c => c.name === name);
+    if(!foundName) {
+      counter.push({name: name, count: 1});
+    } else {
+      foundName.count++;
+    }
+  }
+  return counter;
+}
+
+const matriz = [1,2,3,4,5];
+console.log(count(matriz, n => n > 2))

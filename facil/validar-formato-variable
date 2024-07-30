@@ -1,0 +1,14 @@
+// Haz una función que valide que el nombre ingresado tenga un formato "variable"
+
+function solution(name) {
+  const regex = /^[a-zA-Z_][a-zA-Z0-9_]*$/; // solo letras inglesas, dígitos y guiones bajos, y no puede comenzar con un dígito
+  return regex.test(name);
+}
+
+// ^[a-zA-Z_]: El nombre debe comenzar con una letra (mayúscula o minúscula) o un guion bajo.
+// [a-zA-Z0-9_]*$: El resto del nombre puede contener letras, dígitos o guiones bajos (cero o más veces).
+
+const name = "var_1__Int" // True
+const name2 = "qq-q" // False
+const name3 = "2w2" // False
+solution(name2)

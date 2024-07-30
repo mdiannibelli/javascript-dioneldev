@@ -1,0 +1,16 @@
+// Variables y tipos de variables en Javascript
+
+// Variable => Es un contenedor donde se pueden almacenar valores y cualquier tipo de dato
+
+var mate;
+mate = "Cerámica artesanal";
+
+var mate; 
+mate = "Plástico"; // Estamos reedeclarando la variable MATE
+
+let cantidadDeMates;
+cantidadDeMates = 5;
+cantidadDeMates = 10; // Estamos reasignando el valor de cantidadDeMates
+
+// const descripcion; <-- ¡MAL! Debe declararse con un valor
+const descripcion = "Infusión a base de hojas de yerba" // No se depuede reedeclarar y ni reasignar el valor

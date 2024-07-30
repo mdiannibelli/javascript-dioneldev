@@ -1,0 +1,9 @@
+// Haz una función que devuelva true si todos los dígitos ingresados son pares
+
+function solution(n) {
+  const arrNums = n.toString().split("")
+  return arrNums.every(e => e % 2 === 0 ? true : false)
+}
+const n = 248622 // TRUE
+const n2 = 642386 // FALSE
+solution(n)

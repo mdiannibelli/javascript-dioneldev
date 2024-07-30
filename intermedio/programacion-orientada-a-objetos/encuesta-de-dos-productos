@@ -1,0 +1,28 @@
+// Crea un programa que realice una encuesta a una persona la cual deberá completar la reseña de dos productos, almacenar cada reseña en el usuario correspondiente.
+
+class Entrevistado {
+  constructor(nombre, localidad, reseñas = []) {
+    this.nombre = nombre
+    this.localidad = localidad
+    this.reseñas = reseñas
+  }
+  
+  realizarEncuesta(producto, reseña) {
+    if(typeof producto !== "string" || typeof reseña !== "string") throw new Error("Ingrese un producto y una reseña válida")
+    this.reseñas[producto] = reseña;
+  }
+  
+  obtenerEncuestas() {
+    let encuesta = `Encuesta de ${this.nombre}:\n`
+    for(const producto in this.reseñas) {
+      encuesta += `${producto}: ${this.reseñas[producto]}\n`
+    }
+    return encuesta;
+  }
+}
+
+
+const martin = new Entrevistado("Martin", "CABA");
+martin.realizarEncuesta("Mate", "Buena madera, aporta buen sabor");
+martin.realizarEncuesta("Termo", "Mantiene la temperatura del agua");
+martin.obtenerEncuestas();

@@ -1,0 +1,14 @@
+// Dado un array de enteros encuentra el par
+// de elementos adyacentes que tenga el producto
+// más grande y devuelva el producto
+
+function solution(inputArray) {
+    let total = -Infinity;
+    for(let i = 0; i < inputArray.length; i++) {
+      if(inputArray[i] * inputArray[i+1] > total) total = inputArray[i] * inputArray[i+1];
+    }
+  return total;
+}
+
+const inputArray = [3, 6, -2, -5, 7, 3]
+solution(inputArray)

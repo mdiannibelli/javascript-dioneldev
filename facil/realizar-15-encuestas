@@ -1,0 +1,27 @@
+// Realizar 15 encuestas de dos productos donde cada uno de ellos va a recibir una calificación aleatoria, devolver el producto con mejor promedio y su promedio.
+
+function encuesta() {
+  const productoA = [];
+  const productoB = [];
+  let sumaA = 0;
+  let sumaB = 0;
+  
+  for(let i = 0; i < 15; i++) {
+    const numA = Math.floor(Math.random() * 100 + 1) // 1 - 100
+    const numB = Math.floor(Math.random() * 100 + 1)
+    productoA.push(numA)
+    productoB.push(numB)
+    sumaA += numA
+    sumaB += numB
+  }
+  
+  let promedioA = Math.floor(sumaA / 15);
+  let promedioB = Math.floor(sumaB / 15);
+  if(promedioA > promedioB) {
+    console.log(`El producto A tiene mejores valoraciones que el producto B con un promedio de ${promedioA}`)
+  } else {
+    console.log(`El producto B tiene mejores valoraciones que el producto A con un promedio de ${promedioB}`)
+  }
+}
+
+encuesta()

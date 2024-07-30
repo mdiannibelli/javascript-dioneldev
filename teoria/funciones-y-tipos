@@ -1,0 +1,29 @@
+// Funciones y tipos de funciones
+
+// Declarativa
+function sumar(num1, num2) {
+  return num1 + num2;
+}
+
+sumar(2, 10)
+
+// Constante con valor de función asignado
+const funcion = sumar(20,50)
+funcion // 70
+
+// Arrow Function
+const restar = (num1, num2) => {
+  return num1 - num2;
+}
+
+restar(12, 6)
+
+// Recursivas
+const factorial = (num) => {
+  if(num === 1 || num === 0) {
+    return 1;
+  }
+  return num * factorial(num-1);
+}
+
+factorial(5) // 120

@@ -1,0 +1,17 @@
+// Crear una función que cuente las vocales de una palabra ingresada
+
+function vowelsCounter(word) {
+  const vowels = ['a','e','i','o','u', 'á', 'é', 'í', 'ó', 'ú']
+  let counter = 0;
+  for(let i = 0; i < word.length; i++) {
+    for(let j = 0; j < vowels.length; j++) {
+      if(word[i].toLowerCase() === vowels[j]) {
+        counter++
+      }
+    }
+  }
+  return counter;
+}
+
+const word = 'Argentina es mi país'
+vowelsCounter(word)

@@ -1,0 +1,10 @@
+// Utiliza un método reduce para "aplanar"
+// un array de arrays en un único array que
+// contenga todos los elementos de los arrays origninales.
+
+function aplanar(arrays) {
+  return arrays.reduce((acc,val) => acc.concat(val), [])
+}
+
+let arrays = [[1, 2, 3], [4, 5], [6]]; // → [1, 2, 3, 4, 5, 6]
+aplanar(arrays);

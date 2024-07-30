@@ -1,0 +1,26 @@
+// Modificar el funcionamiento de Javascript en un objeto y en un array (PROTOTYPES)
+
+// Modificando el prototipo de un Objeto
+let obj = {
+  name: 'Marcos',
+  age: 20,
+  changeName: function(name) {
+    this.name = name
+  }
+}
+
+obj.changeName('Diego')
+obj.name // 'Diego'
+
+
+// Modificar el prototipo de un Array
+const nums = [1, 2, 3, 4, 5]
+Array.prototype.sumar = function() {
+  let resultado = 0;
+  for(let i = 0; i < this.length; i++) {
+    resultado += this[i]
+  }
+  return resultado
+}
+
+nums.sumar() // 15

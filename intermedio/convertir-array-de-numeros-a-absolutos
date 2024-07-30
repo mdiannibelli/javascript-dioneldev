@@ -1,0 +1,16 @@
+// Crear una función convertir que convierta un array de números consecutivos a un array de números absolutos.
+
+const convert = (nums) => {
+  return nums.reduce((acc, value) => {
+    return acc.concat(acc[acc.length - 1] + value);
+  }, [nums[0]])
+}
+// acc (2) = 2
+// acc (2) + value (2) = 4
+// acc(4) + value (2) = 6
+// acc(6) + value (3) = 9
+// acc(9) + value (1) = 10
+
+
+const arrayOfNums = [2,2,3,1] //[ 2, 4, 6, 9, 10 ]
+convert(arrayOfNums);

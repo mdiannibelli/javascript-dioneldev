@@ -1,0 +1,19 @@
+// Haz una función que reemplace en el array los números a reemplazar
+
+function solution(arr, numToReplace, substitutionNum) {
+  for(let i = 0; i < arr.length; i++) {
+    if(arr[i] === numToReplace) {
+      arr.splice(i, 1, substitutionNum)
+    }
+  }
+  return arr
+}
+
+function solution2(arr, numToReplace, substitutionNum) {
+  return arr.map(e => e === numToReplace ? substitutionNum : e)
+}
+
+const arr = [1, 2, 1]
+const numToReplace = 1;
+const substitutionNum = 3;
+solution2(arr, numToReplace, substitutionNum) // [3,2,3]

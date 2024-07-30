@@ -1,0 +1,23 @@
+// Haz una función que reemplace cada letra de un string por la siguiente letra según el abecedario inglés
+
+function solution(word) {
+  const alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+
+  let newWord = []
+  for(let i = 0; i < word.length; i++) {
+    if(alphabet.includes(word[i].toLowerCase())) {
+      let position = alphabet.findIndex(e => e === word[i])
+      if(word[i].toLowerCase() === "z") {
+        newWord.push(alphabet[0])
+      } else {
+        newWord.push(alphabet[position + 1])
+      }
+    }
+  }
+  return newWord.join("")
+}
+
+const word = 'crazy';
+const word2 = 'codesignal'
+solution(word) // dsbaz
+solution(word2) // dpeftjhobm

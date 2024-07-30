@@ -1,0 +1,24 @@
+// Dado dos cadenas de texto, encontrar el número de carácteres que se repiten entre sí.
+
+function solution(s1, s2) {
+  const firstWord = s1.split("")
+  const secondWord = s2.split("")
+  
+  let counter = 0;
+  
+  for(let i = 0; i < firstWord.length; i++) {
+    for(let j = 0; j < secondWord.length; j++) {
+      if(firstWord[i] === secondWord[j]) {
+      counter++ 
+      secondWord.splice(j, 1)
+      break;
+    }
+    }
+  }
+
+  return counter
+}
+
+const s1 = "aabcc"
+const s2 = "adcaa"
+solution(s1, s2) // 3 => a a c

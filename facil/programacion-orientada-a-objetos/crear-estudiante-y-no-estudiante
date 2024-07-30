@@ -1,0 +1,30 @@
+// Crear dos personas, una que esté estudiando y otra que no.
+// Debe contener nombre, edad, género y la carrera.
+
+class Persona {
+  constructor(nombre, edad, genero) {
+    this.nombre = nombre
+    this.edad = edad
+    this.genero = genero
+  }
+  saludar() {
+    console.log(`Hola soy ${this.nombre} y tengo ${this.edad} años.`)
+  }
+}
+
+class Estudiante extends Persona {
+  constructor(nombre, edad, genero, carrera) {
+    super(nombre, edad, genero)
+    this.carrera = carrera
+  }
+  estudios() {
+    super.saludar()
+    console.log( `Me encuentro estudiando ${this.carrera}`)
+  }
+}
+
+const persona = new Persona('Martin', 20, 'Masculino')
+persona.saludar()
+
+const estudiante = new Estudiante('Pablo', 25, 'Masculino', 'Programación')
+estudiante.estudios()
