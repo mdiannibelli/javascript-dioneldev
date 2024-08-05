@@ -1,0 +1,25 @@
+//  Haz una función que dada una planta que crece constantemente y una velocidad de crecimiento y de decrecimiento calcular cuántos días deberá crecer hasta la altura deseada.
+
+// ¡La planta crece de día y decrece de noche!
+
+function solution(upSpeed, downSpeed, desiredHeight) {
+  let height = 0;
+  let days = 0;
+  while(height < desiredHeight) {
+    days++;
+    height += upSpeed;
+    if(height >= desiredHeight) break;
+    height -= downSpeed;
+  }
+  return days;
+}
+
+const desiredHeight = 910;
+const upSpeed = 100;
+const downSpeed = 10;
+solution(upSpeed, downSpeed, desiredHeight) // 10
+
+const desiredHeight2 = 4;
+const upSpeed2 = 10;
+const downSpeed2 = 9;
+solution(upSpeed2, downSpeed2, desiredHeight2) // 1

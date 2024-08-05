@@ -1,0 +1,10 @@
+// Haz una función que rellene una matriz con puertas y ventanas donde la cantidad de puertas es par y las ventanas es impar, recibiendo un n° por parametros que indique la longitud de la matriz.
+
+function solution(quantity) {
+  return Array(quantity).fill(null).map((value, index) => {
+    if(index % 2 === 0) return "Puerta"
+    return "Ventana"
+  })
+}
+
+solution(12)

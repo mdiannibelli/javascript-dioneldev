@@ -1,0 +1,14 @@
+// Haz una función que dado un string cuente los carácteres que son distintos entre ellos
+
+function solution(str) {
+  const charsCount = str.split("").reduce((acc, value) => {
+    if(!acc.includes(value)) {
+    acc.push(value)
+  }
+    return acc
+  }, [])
+  
+  return charsCount.length
+}
+
+solution("cabca") // 3
