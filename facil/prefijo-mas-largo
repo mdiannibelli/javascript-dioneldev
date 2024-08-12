@@ -1,0 +1,17 @@
+// Haz una función que dado un string devuelva el prefijo más largo que contenga únicamente números
+
+function solution(str) {
+  let nums = "";
+  for(let i = 0; i < str.length; i++) {
+    if(str[i] >= '0' && str[i] <= '9') {
+      nums += str[i]
+    } else {
+      break;
+    }
+  }
+  return nums;
+}
+
+solution("123aa1") // 123
+solution("0123456789") // 0123456789
+solution("aaaaaaa") // ""

@@ -1,0 +1,6 @@
+// ¿Qué quiere decir que un lenguaje de programación sea DINÁMICO?
+let word = "Hola mundo";
+typeof word // 'string'
+
+word = 10;
+typeof word; // 'number'

@@ -1,0 +1,26 @@
+// Haz una función que dado dos items encontrados en un tesoro con sus respectivos pesos y valores, calcular el máximo valor de items que puedes llevar teniendo en cuenta tu capacidad máxima de peso.
+// No puedes llevar más de un item del mismo tipo.
+
+function solution(v1, w1, v2, w2, maxW) {
+  if(w1 + w2 <= maxW) {
+    return v1 + v2;
+  } else if(w1 <= maxW && w2 > maxW) {
+    return v1;
+  } else if(w2 <= maxW && w1 > maxW) {
+    return v2;
+  } else if(w1 <= maxW && w2 <= maxW) {
+    return Math.max(v1, v2)
+  } else {
+    return 0;
+  }
+}
+
+const value1 = 10;
+const weight1 = 5;
+const value2 = 6;
+const weight2 = 4;
+const maxW = 8;
+solution(value1, weight1, value2, weight2, maxW) // 10
+solution(10, 5, 6, 4, 9) // 16
+solution(10, 2, 11, 3, 1) // 0
+solution(15, 2, 20, 3, 2) // 15

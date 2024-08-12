@@ -1,0 +1,29 @@
+// Haz una función que encuentre la mayor cantidad de dígitos consecutivos dado un string
+
+function solution(str) {
+  let currentDigits = ""
+  let result = ""
+  
+  for(let i = 0; i < str.length; i++) {
+    if(str[i] >= '0' && str[i] <= '9') {
+      currentDigits += str[i]
+    } else {
+      if(result.length < currentDigits.length) {
+        result = currentDigits;
+      }
+      currentDigits = "";
+    }
+  }
+  
+  // Check the last currentDigits
+  if(currentDigits.length > result.length) {
+    result = currentDigits;
+  }
+  return result;
+}
+
+solution("123aa1") // "123"
+solution("123aaa53828") // "53828"
+solution("a652a69192a56834832aa23") // "56834832"
+solution("0123456789"); // "0123456789"
+solution("aaaaaaa"); // ""

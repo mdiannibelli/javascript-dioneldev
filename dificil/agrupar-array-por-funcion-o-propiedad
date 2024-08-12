@@ -1,0 +1,22 @@
+// Haz una función que permita agrupar un array, que puede ser de valores u objetos a través de una función o de una propiedad.
+
+function solution(values, iteratee) { // iteratee es lo que se ejecuta para cada elemento
+  const obj = {} // Debe devolver un objeto por ende creamos un objeto
+  for(const value of values) {
+    const key = typeof iteratee === 'function' ? iteratee(value) : value[iteratee] // metodo o accedemos a propiedad
+    
+    // checkear si la key esta en el objeto
+    key in obj ? obj[key].push(value) : obj[key] = [value]
+  }
+  return obj;
+}
+
+
+solution([6.1, 4.2, 6.3], Math.floor) // { 6: [6.1, 6.3], 4: [4.2]}
+solution(['one', 'two', 'three'], 'length') // { 3: ['one', 'two'], 5: ['three'] }
+solution([{age: 23}, {age: 24}], 'age') // { 23: [{age: 23}], 24: [{age: 24}] } 
+solution([
+  {title: 'Learning Js', rating: 8},
+  {title: 'Coding', rating: 10},
+  {title: 'Function', rating: 9}
+], 'rating') // { 8: [{title: 'Learning Js', rating: 8}], 9....etc }
