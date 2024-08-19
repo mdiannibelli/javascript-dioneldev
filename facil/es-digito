@@ -1,0 +1,10 @@
+// Determinar con una función si el símbolo ingresado es un dígito
+
+function solution(symbol) {
+    const condition = symbol >= '0' && symbol <= '9'
+    return condition 
+}
+
+
+solution('0') // true
+solution('-') // false

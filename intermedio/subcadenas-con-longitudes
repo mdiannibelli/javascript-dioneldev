@@ -1,0 +1,22 @@
+// Dado un string dividir la cadena en el menor número posible de subcadenas separadas de carácteres idénticos y luego reemplazar con una concatenación su longitud con su respectiva letra.
+// ["aa", "bbb", "c"]
+// "aa" => 2a, "bbb" => 3b, "c" => c
+
+function solution(s) {
+  let letter = "";
+  let word = "";
+  for(let i = 0; i < s.length; i++) {
+    letter += s[i]
+    if(s[i] !== s[i+1]) {
+      if(letter.length > 1) {
+        word += letter.length + letter[0]
+      } else {
+        word += letter
+      }
+      letter = ""
+    }
+  }
+   return word;
+}
+
+solution("aabbbc") // 2a3bc

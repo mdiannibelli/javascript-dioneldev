@@ -1,0 +1,23 @@
+// En un tablero de ajedrez queremos calcular la cantidad de movimientos que puede hacer un caballo a partir de una celda dada que es donde se encuentra.
+
+function solution(cell) {
+  const column = cell.charCodeAt(0) - 'a'.charCodeAt(0) + 1;
+  const row = parseInt(cell[1]);
+  
+  const knightMoves = [
+    [2, 1], [2, -1], [1, -2], [1, 2], [-2, 1], [-2, -1], [-1, 2], [-1, -2]
+  ]
+  
+  let validMoves = 0;
+  for(const move of knightMoves) {
+    const newX = column + move[1];
+    const newY = row + move[0]
+    if(newX >= 1 && newX <= 8 && newY >= 1 && newY <= 8) {
+      console.log(move) // [2, 1] [1, 2]
+      validMoves++;
+    }
+  }
+  return validMoves;
+}
+
+solution("a1") // 2

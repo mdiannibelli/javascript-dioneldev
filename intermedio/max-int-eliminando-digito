@@ -1,0 +1,17 @@
+// Dado un entero encuentre el máximo número que puedes obtener eliminando únicamente un dígito.
+
+function solution(num) {
+  let nums = num.toString();
+  let maxNum = -Infinity;
+  
+  for(let i = 0; i < nums.length; i++) {
+    const newNumStr = nums.slice(0, i) + nums.slice(i+1)
+    if(Number(newNumStr) > maxNum) {
+      maxNum = Number(newNumStr);
+    }
+  }
+  return maxNum;
+}
+
+solution(152) // 52
+solution(1001) // 101

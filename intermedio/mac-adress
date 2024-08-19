@@ -1,0 +1,30 @@
+// Verifica si la MAC Adress es correcta o incorrecta, teniendo en cuenta que debe contener números del 0 al 9 y letras de la A a la F.
+
+function solution(inputString) {
+  const segments = inputString.split("-")
+  if(segments.length !== 6) return false;
+  
+  for(let i = 0; i < segments.length; i++) {
+    const firstPart = segments[i][0]
+    const secondPart = segments[i][1]
+    if(!((firstPart >= '0' && firstPart <= '9') || (firstPart >= 'A' && firstPart <= 'F'))) {
+      return false;
+    } 
+    if(!((secondPart >= '0' && secondPart <= '9') || (secondPart >= 'A' && secondPart <= 'F')))  {
+      return false;
+    }
+  }
+  return true;
+}
+
+// Solución 2
+function solution2(inputString) {
+  const macRegex = /^([0-9A-F]{2}-){5}[0-9A-F]{2}$/;
+  return macRegex.test(inputString);
+}
+
+
+solution("00-1B-63-84-45-E6") // true
+solution("Z1-1B-63-84-45-E6") // false
+solution("not a MAC-48 address") // false
+solution("12-34-56-78-9A-BG") // false
