@@ -1,0 +1,27 @@
+// Convertir una "key" en un número hash utilizando el algoritmo DJB2, y para el segundo resultado ten en cuenta que debemos reducir el valor calculado a una tabla con un tamaño de 100.
+// hash = 53181;
+// tableSize = 100;
+
+function djb2Hash(str) {
+  let hash = 5381;
+  for(let i = 0; i < str.length; i++) {
+    hash = (hash * 33) + str.charCodeAt(i); // La multiplicación por 33 y el uso de charCodeAt son parte de su mecanismo para generar un valor hash a partir de una cadena de texto.
+  }
+  
+  return hash;
+}
+
+let tableSize = 100;
+djb2Hash("dioneldev") // 249885461146855140
+console.log(djb2Hash("programar") % tableSize) // 16
+
+
+function hash(str) {
+  let hash = 0;
+  let tableSize = 10;
+  for(let i = 0; i < str.length; i++) {
+    hash += str.charCodeAt(i)
+  }
+  return hash % 10;
+}
+hash("marcos") // 5

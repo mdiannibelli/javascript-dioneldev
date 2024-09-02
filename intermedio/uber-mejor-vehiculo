@@ -1,0 +1,36 @@
+// Resolver este ejercicio de Uber: siendo un nuevo usuario de Uber tienes $20 de tu primer viaje, quieres aprovecharlos en el mejor auto posible que puedas adquirir. Dado una cantidad de millas a recorrer y un costo por milla de cada auto calcular el mejor vehículo que puedes adquirir sin gastar dinero de tu bolsillo.
+
+function solution(miles, costPerMile) {
+  const credit = 20;
+  const rides = ["UberX", "UberXL", "UberPlus", "UberBlack", "UberSUV"]
+  let result = ""
+  for(let i = 0; i < costPerMile.length; i++) {
+    if(costPerMile[i] * miles <= credit) {
+      result = rides[i]
+      if(i+1 === costPerMile.length) return result;
+    } else {
+      return result !== '' ? result : rides.at(-1);
+    }
+  }
+}
+
+const l = 30;
+const fares = [0.3, 0.5, 0.7, 1, 1.3]
+solution(l, fares) // UberXL
+
+solution(15, [0.7, 1, 1.3, 1.5, 1.7]) // Uber plus
+solution(19, [1, 2, 3, 4, 5]) // UberX
+
+function solution2(miles, costs) {
+  const credit = 20;
+  const rides = ["UberX", "UberXL", "UberPlus", "UberBlack", "UberSUV"]
+  
+  const index = costs.findIndex(cost => {
+    return (cost * miles) > credit;
+  })
+  return index > 0 ? rides[index - 1] : rides.at(-1);
+}
+
+solution2(30, [0.3, 0.5, 0.7, 1, 1.3]) // UberXL
+solution2(15, [0.7, 1, 1.3, 1.5, 1.7]) // Uber plus
+solution2(19, [1, 2, 3, 4, 5]) // UberX

@@ -1,0 +1,10 @@
+// Uber esta construyendo una aplicación que estima cuanto costará tu viaje antes de pedirlo, eres un desarrollador que deberá obtener el resultado final a través del siguiente cálculo:
+// (costoPorMinuto * duracionViaje) + (costoPorMilla * distanciaViaje)
+
+function solution(duracionViaje, distanciaViaje, costoPorMinuto, costoPorMilla) {
+  return costoPorMilla.map((_, index) => {
+    return (costoPorMinuto[index] * duracionViaje) + (costoPorMilla[index] * distanciaViaje)
+  })
+}
+
+solution(30, 7, [0.2, 0.35, 0.4, 0.45], [1.1, 1.8, 2.3, 3.5]) // [13.7, 23.1, 28.1, 38]

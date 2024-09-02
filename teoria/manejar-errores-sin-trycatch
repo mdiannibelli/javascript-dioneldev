@@ -1,0 +1,33 @@
+// Manejar errores sin usar try catch para mejorar la optimización del código.
+
+class MyError extends Error {
+  constructor(message) {
+    super(message)
+    this.name = "Custom Error"
+  }
+}
+
+function sumOne(num) {
+  if(typeof num !== 'number') {
+    return {
+      result: null, 
+      error: new MyError("Parameter must be a number!")
+    }
+  }
+  
+  let output = num + 1;
+  return {
+    result: output,
+    error: null
+  }
+}
+
+function makeOperation() {
+  const { result, error } = sumOne(10);
+  if(error) {
+    console.log(`Error ${error.name}: ${error.message}`)
+  } else {
+    return result;
+  }
+}
+makeOperation()

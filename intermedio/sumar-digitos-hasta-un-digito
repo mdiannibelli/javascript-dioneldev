@@ -1,0 +1,16 @@
+// Haz una función que dado un numero entero devuelva la cantidad de veces que se deben sumar dígitos hasta obtener un número de un solo dígito.
+
+function solution(n) {
+  let count = 0;
+  while(n >= 10) {
+    n = n.toString().split("").reduce((acc, value) => acc + parseInt(value), 0)
+    count++;
+  }
+  
+  return count;
+}
+
+solution(5) // result = 0
+solution(100) // 1 + 0 + 0 = 1; result = 1;
+solution(91) // 9 + 1 = 10 => 1 + 0 = 1; result = 2;
+solution(877) // 8 + 7 + 7 = 22 => 2 + 2 = 4; result = 2;
