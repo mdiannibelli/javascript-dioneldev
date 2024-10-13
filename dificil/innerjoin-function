@@ -1,0 +1,30 @@
+// Crear una función que simule un inner join con los siguientes datos
+
+const students = [
+  { id: 1, name: 'Alice' },
+  { id: 2, name: 'Bob' },
+  { id: 3, name: 'Charlie' },
+  { id: 4, name: 'David' }
+]
+
+const grades = [
+  { studentId: 1, grade: 'A' },
+  { studentId: 2, grade: 'B' },
+  { studentId: 3, grade: 'A' },
+  { studentId: 5, grade: 'C' },
+]
+
+function innerJoin(leftArray, rightArray, leftKey, rightKey) {
+  const map = new Map();
+  leftArray.forEach(leftEl => map.set(leftEl[leftKey], leftEl));
+  
+  const output = [];
+  rightArray.forEach(rightEl => {
+    const leftEl = map.get(rightEl[rightKey], rightEl);
+    if(leftEl === undefined) return;
+    output.push({...leftEl, ...rightEl});
+  })
+  return output
+}
+
+innerJoin(students, grades, 'id', 'studentId')
