@@ -1,0 +1,15 @@
+// Dado una cantidad de personas (n) y una cantidad de comida (f), calcular cuantos platos de comida serán comidos teniendo en cuenta que cada persona quiere comer lo más que pueda y cada uno deberá comer la misma cantidad que el resto.
+
+function solution(n, f) {
+  if(n === 1 || n === f) return f;
+  let count = 0;
+  for(let i = n; i <= f; i += n) {
+    count = i;
+  }
+  return count;
+}
+
+solution(9, 18) // 18
+solution(3, 10) // 9
+solution(4, 4) // 4
+solution(1, 2) // 2

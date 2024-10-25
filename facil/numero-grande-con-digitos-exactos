@@ -1,0 +1,10 @@
+// Dado un n° entero devolver el número más grande que contenga la cantidad exacta de dígitos dados.
+
+function solution(n) {
+  let arr = Array.from({length: 1}, () => Array(n).fill(9));
+  console.log(arr);
+  return Number(arr[0].join(""));
+}
+
+solution(2) // 99
+solution(4) // 9999

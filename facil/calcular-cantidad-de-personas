@@ -1,0 +1,15 @@
+// Estas en medio de una obra de teatro y para salir hacia la salida de tu izquierda decides calcular dado una cantidad de columnas y filas totales y tu número de columna y fila donde te encuentras, la cantidad de personas que se encuentra sentada detras tuya y en la columna de la izquierda.
+
+function solution(nCols, nRows, col, row) {
+  const $MAX_COLS = nCols;
+  const $MAX_ROWS = nRows;
+  if($MAX_COLS === 1 && $MAX_ROWS === 1) return 0;
+  
+  const TOTAL_COLS = $MAX_COLS - col;
+  const TOTAL_ROWS = $MAX_ROWS - row;
+  return (TOTAL_COLS * TOTAL_ROWS) + TOTAL_ROWS
+}
+
+solution(16, 11, 5, 3) // 96
+solution(1, 1, 1, 1) // 0
+solution(13, 6, 8 , 3) // 18 

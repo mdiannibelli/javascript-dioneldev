@@ -1,0 +1,8 @@
+// Crear una función que devuelva la suma de los dígitos ingresados.
+
+function solution(n) {
+  return n.toString().split("").reduce((acc, value) => acc + Number(value) ,0)
+}
+
+solution(29) // 11
+solution(123) // 6
